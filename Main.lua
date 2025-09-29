@@ -28,8 +28,8 @@ for _, featureName in ipairs(FeatureList) do
     end)
 
     if success and featureModule then
-        -- Descobre em qual aba a UI deve ser criada (poderia ser mais avançado)
         local targetTab
+        -- ATUALIZADO: Lógica de atribuição de abas
         if featureName == "Walkspeed" or featureName == "Noclip" then
             targetTab = GUI.Tabs.Movement
         elseif featureName == "Aimbot" then
@@ -38,9 +38,10 @@ for _, featureName in ipairs(FeatureList) do
             targetTab = GUI.Tabs.Visuals
         end
         
-        -- Inicializa o módulo, passando a aba de destino para ele
         if targetTab and featureModule.Init then
-            featureModule:Init(targetTab)
+            pcall(featureModule.Init, featureModule, targetTab) -- pcall para segurança
+        else
+            warn("Módulo", featureName, "não possui Init ou aba de destino.")
         end
     else
         warn("Falha ao carregar o módulo:", featureName, featureModule)
