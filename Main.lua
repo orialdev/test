@@ -31,7 +31,7 @@ for _, featureName in ipairs(FeatureList) do
         local targetTab
         -- ATUALIZADO: Lógica de atribuição de abas
         if featureName == "Walkspeed" or featureName == "Noclip" then
-            targetTab = GUI.Tabs.Movement
+            targetTab = GUI.Tabs.Player
         elseif featureName == "Aimbot" then
             targetTab = GUI.Tabs.Combat
         elseif featureName == "ESP" then
