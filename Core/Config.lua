@@ -22,6 +22,6 @@ local Config = {
 }
 
 -- Funções para salvar/carregar podem ser adicionadas aqui
-getgenv().MyHubConfig = Config
+-- getgenv().MyHubConfig = Config
 
 return Config
