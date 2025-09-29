@@ -1,8 +1,8 @@
 -- Features/Walkspeed.lua
 
 -- Carregamos as dependências necessárias no início
-local Utils = loadstring(game:HttpGet(".../Core/Utils.lua"))() -- Ajuste o caminho
-local Config = loadstring(game:HttpGet(".../Core/Config.lua"))() -- Ajuste o caminho
+local Utils = loadstring(game:HttpGet("https://github.com/orialdev/test/blob/main/Core/Utils.lua"))()
+local Config = loadstring(game:HttpGet("https://github.com/orialdev/test/blob/main/Core/Config.lua"))()
 
 -- O módulo em si
 local WalkspeedModule = {}
