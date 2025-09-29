@@ -30,7 +30,7 @@ for _, featureName in ipairs(FeatureList) do
     if success and featureModule then
         -- Descobre em qual aba a UI deve ser criada (poderia ser mais avançado)
         local targetTab
-        if featureName == "Walkspeed" then
+        if featureName == "Walkspeed" or featureName == "Noclip" then
             targetTab = GUI.Tabs.Movement
         elseif featureName == "Aimbot" then
             targetTab = GUI.Tabs.Combat
