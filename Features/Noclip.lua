@@ -62,18 +62,20 @@ function NoclipModule:Init(targetTab)
 })
     
     section:Toggle({
-        Name = "Enable Noclip",
+        Title = "Enable Noclip",
         Default = Config.Movement.Noclip.Enabled,
         Callback = function(value)
             NoclipModule:Toggle(value)
         end
     })
-    
+    section.Character:Divider()
     section:Slider({
-        Name = "Noclip Speed",
-        Min = 1,
-        Max = 10,
-        Default = 1,
+        Title = "Noclip Speed",
+        Value = {
+            Min = 0.5,
+            Max = 5,
+            Default = Config.Movement.Noclip.Speed,
+        },
         Callback = function(value)
             speed = value
         end

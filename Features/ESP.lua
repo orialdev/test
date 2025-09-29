@@ -107,7 +107,7 @@ function ESPModule:Init(targetTab)
 })
 
     section:Toggle({
-        Name = "Enable ESP",
+        Title = "Enable ESP",
         Default = Config.ESP.Enabled,
         Callback = function(value)
             ESPModule:Toggle(value)
@@ -115,7 +115,7 @@ function ESPModule:Init(targetTab)
     })
     
     section:Toggle({
-        Name = "Show Boxes",
+        Title = "Show Boxes",
         Default = Config.ESP.ShowBoxes,
         Callback = function(value)
             Config.ESP.ShowBoxes = value
@@ -123,7 +123,7 @@ function ESPModule:Init(targetTab)
     })
 
     section:Toggle({
-        Name = "Show Names",
+        Title = "Show Names",
         Default = Config.ESP.ShowNames,
         Callback = function(value)
             Config.ESP.ShowNames = value
