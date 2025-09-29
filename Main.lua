@@ -6,9 +6,9 @@ getgenv().HubLoaded = true
 
 -- Carregar os módulos principais
 -- O método de carregar (require, loadstring, etc.) depende do seu executor
-local Utils = loadstring(game:HttpGet("https://github.com/orialdev/test/blob/main/Core/Utils.lua"))()
-local Config = loadstring(game:HttpGet("https://github.com/orialdev/test/blob/main/Core/Config.lua"))()
-local GUI = loadstring(game:HttpGet("https://github.com/orialdev/test/blob/main/Core/GUI.lua"))()
+local Utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/orialdev/test/refs/heads/main/Core/Utils.lua"))()
+local Config = loadstring(game:HttpGet("https://raw.githubusercontent.com/orialdev/test/refs/heads/main/Core/Config.lua"))()
+local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/orialdev/test/refs/heads/main/Core/GUI.lua"))()
 
 -- Lista dos módulos de features a serem carregados
 local FeatureList = {
@@ -21,7 +21,7 @@ local FeatureList = {
 for _, featureName in ipairs(FeatureList) do
     local success, featureModule = pcall(function()
         -- Carrega o módulo da feature
-        return loadstring(game:HttpGet("https://github.com/orialdev/test/tree/main/Features" .. featureName .. ".lua"))()
+        return loadstring(game:HttpGet("https://raw.githubusercontent.com/orialdev/test/refs/heads/main/Features/" .. featureName .. ".lua"))()
     end)
 
     if success and featureModule then
