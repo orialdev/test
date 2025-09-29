@@ -55,9 +55,13 @@ function NoclipModule:Toggle(enabled)
 end
 
 function NoclipModule:Init(targetTab)
-    local section = targetTab:AddSection({Name = "Noclip"})
+    local section = targetTab:Section({ 
+    Title = "Noclip",
+    TextXAlignment = "Left",
+    TextSize = 17,
+})
     
-    section:AddToggle({
+    section:Toggle({
         Name = "Enable Noclip",
         Default = Config.Movement.Noclip.Enabled,
         Callback = function(value)
@@ -65,7 +69,7 @@ function NoclipModule:Init(targetTab)
         end
     })
     
-    section:AddSlider({
+    section:Slider({
         Name = "Noclip Speed",
         Min = 1,
         Max = 10,

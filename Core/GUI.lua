@@ -2,10 +2,10 @@
 local GUI = {}
 
 -- Supondo que você está usando uma biblioteca de UI chamada 'OrionLib'
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
-local Window = OrionLib:MakeWindow({
-    Name = "Meu Super Hub",
+local Window = WindUI:MakeWindow({
+    Name = "testing",
     HidePremium = false,
     SaveConfig = true,
     ConfigFolder = "MyHubConfig"
@@ -13,9 +13,12 @@ local Window = OrionLib:MakeWindow({
 
 -- Criamos as abas aqui e as guardamos para que os módulos possam usá-las
 GUI.Tabs = {
-    Combat = Window:MakeTab({ Name = "Combat", Icon = "rbxassetid://4483345998", PremiumOnly = false }),
-    Movement = Window:MakeTab({ Name = "Movement", Icon = "rbxassetid://4483345998", PremiumOnly = false }),
-    Visuals = Window:MakeTab({ Name = "Visuals", Icon = "rbxassetid://4483345998", PremiumOnly = false })
+    Player      = Window:Tab({ Title = "Player", Icon = "user" }),
+    Combat      = Window:Tab({ Title = "Combat", Icon = "swords" }),
+    Visuals     = Window:Tab({ Title = "Visuals", Icon = "eye" }),
+    Teleports   = Window:Tab({ Title = "Teleports", Icon = "map-pin" }),
+    Utilities   = Window:Tab({ Title = "Utilities", Icon = "box" }),
+    Extras    = Window:Tab({ Title = "Extras", Icon = "book-open" }),
 }
 
 return GUI
