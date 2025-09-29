@@ -100,8 +100,9 @@ end
 
 -- Função que cria a UI desta feature
 function ESPModule:Init(targetTab)
+    local section = targetTab:AddSection({Name = "ESP"})
 
-    targetTab:AddToggle({
+    section:AddToggle({
         Name = "Enable ESP",
         Default = Config.ESP.Enabled,
         Callback = function(value)
@@ -109,7 +110,7 @@ function ESPModule:Init(targetTab)
         end
     })
     
-    targetTab:AddToggle({
+    section:AddToggle({
         Name = "Show Boxes",
         Default = Config.ESP.ShowBoxes,
         Callback = function(value)
@@ -117,7 +118,7 @@ function ESPModule:Init(targetTab)
         end
     })
 
-    targetTab:AddToggle({
+    section:AddToggle({
         Name = "Show Names",
         Default = Config.ESP.ShowNames,
         Callback = function(value)

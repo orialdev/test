@@ -55,8 +55,9 @@ function NoclipModule:Toggle(enabled)
 end
 
 function NoclipModule:Init(targetTab)
+    local section = targetTab:AddSection({Name = "Noclip"})
     
-    targetTab:AddToggle({
+    section:AddToggle({
         Name = "Enable Noclip",
         Default = Config.Movement.Noclip.Enabled,
         Callback = function(value)
@@ -64,7 +65,7 @@ function NoclipModule:Init(targetTab)
         end
     })
     
-    targetTab:AddSlider({
+    section:AddSlider({
         Name = "Noclip Speed",
         Min = 1,
         Max = 10,
