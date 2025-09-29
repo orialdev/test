@@ -1,4 +1,6 @@
 -- Main.lua
+local HttpService = game:GetService("HttpService")
+local RunService = game:GetService("RunService")
 
 -- Garante que o script não rode duas vezes
 if getgenv().HubLoaded then return end
@@ -14,7 +16,8 @@ local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/orialdev/
 local FeatureList = {
     "Walkspeed",
     "Aimbot",
-    "ESP"
+    "ESP",      -- <<< ADICIONADO
+    "Noclip"    -- <<< ADICIONADO
 }
 
 -- Carregar e inicializar cada feature

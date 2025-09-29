@@ -1,4 +1,5 @@
--- Core/Config.lua
+-- Core/Config.lua (versão atualizada)
+
 local Config = {
     -- Valores padrão
     Aimbot = {
@@ -8,15 +9,19 @@ local Config = {
     Movement = {
         Walkspeed = 16,
         Jumppower = 50,
+        Noclip = {       -- <<< NOVA SEÇÃO
+            Enabled = false
+        }
     },
-    ESP = {
+    ESP = {             -- <<< NOVA SEÇÃO
         Enabled = false,
-        Boxes = true,
+        ShowBoxes = true,
+        ShowNames = true,
+        Color = Color3.fromRGB(255, 0, 255)
     }
 }
 
 -- Funções para salvar/carregar podem ser adicionadas aqui
--- Exemplo simples (usando getgenv, comum em executores):
--- getgenv().MyHubConfig = Config
+getgenv().MyHubConfig = Config
 
 return Config
