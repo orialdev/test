@@ -2,10 +2,6 @@
 local HttpService = game:GetService("HttpService")
 local RunService = game:GetService("RunService")
 
--- Garante que o script não rode duas vezes
-if getgenv().HubLoaded then return end
-getgenv().HubLoaded = true
-
 -- Carregar os módulos principais
 -- O método de carregar (require, loadstring, etc.) depende do seu executor
 local Utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/orialdev/test/refs/heads/main/Core/Utils.lua"))()
