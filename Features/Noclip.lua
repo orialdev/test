@@ -56,8 +56,8 @@ end
 
 function NoclipModule:Init(targetTab)
     local section = targetTab:Section({
-    Title = "",
-    Icon = "",
+    Title = "Noclip",
+    Icon = "brick-wall",
     TextXAlignment = "Left",
     TextSize = 26,
 })

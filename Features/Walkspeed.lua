@@ -42,7 +42,14 @@ end
 
 -- Função de inicialização: cria a UI para este módulo específico
 function WalkspeedModule:Init(targetTab)
-    targetTab:Toggle({
+    local section = targetTab:Section({ 
+    Title = "Walkspeed",
+    Icon = "walking",
+    TextXAlignment = "Left",
+    TextSize = 26,
+})
+
+    section:Toggle({
         Title = "Enable Walkspeed",
         Default = Config.Movement.Enabled, -- Pega o valor do config
         Callback = function(value)
@@ -50,7 +57,7 @@ function WalkspeedModule:Init(targetTab)
         end
     })
 
-    targetTab:Slider({
+    section:Slider({
         Title = "Speed",
         Value = {
             Min = 16,
