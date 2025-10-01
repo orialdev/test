@@ -55,10 +55,11 @@ function NoclipModule:Toggle(enabled)
 end
 
 function NoclipModule:Init(targetTab)
-    local section = targetTab:Section({ 
-    Title = "Noclip",
+    local section = targetTab:Section({
+    Title = "",
+    Icon = "",
     TextXAlignment = "Left",
-    TextSize = 17,
+    TextSize = 26,
 })
     
     section:Toggle({
@@ -68,7 +69,7 @@ function NoclipModule:Init(targetTab)
             NoclipModule:Toggle(value)
         end
     })
-    section.Character:Divider()
+    
     section:Slider({
         Title = "Noclip Speed",
         Value = {

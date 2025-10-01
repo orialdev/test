@@ -1,7 +1,5 @@
--- Core/Config.lua (versão atualizada)
 
 local Config = {
-    -- Valores padrão
     Aimbot = {
         Enabled = false,
         FOV = 90,
@@ -9,11 +7,11 @@ local Config = {
     Movement = {
         Walkspeed = 16,
         Jumppower = 50,
-        Noclip = {       -- <<< NOVA SEÇÃO
+        Noclip = {
             Enabled = false
         }
     },
-    ESP = {             -- <<< NOVA SEÇÃO
+    ESP = {
         Enabled = false,
         ShowBoxes = true,
         ShowNames = true,
@@ -21,7 +19,6 @@ local Config = {
     }
 }
 
--- Funções para salvar/carregar podem ser adicionadas aqui
-getgenv().MyHubConfig = Config
+getgenv().WindUI.MySuperHub = Config
 
 return Config
