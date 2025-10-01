@@ -19,6 +19,4 @@ local Config = {
     }
 }
 
-getgenv().WindUI.MySuperHub = Config
-
 return Config
