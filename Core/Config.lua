@@ -1,4 +1,3 @@
-
 local Config = {
     Aimbot = {
         Enabled = false,

@@ -44,10 +44,9 @@ end
 function WalkspeedModule:Init(targetTab)
     local section = targetTab:Section({ 
     Title = "Walkspeed",
-    Icon = "walking",
     TextXAlignment = "Left",
-    TextSize = 26,
-})
+    TextSize = 17,
+    })
 
     section:Toggle({
         Title = "Enable Walkspeed",

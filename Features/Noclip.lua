@@ -55,11 +55,10 @@ function NoclipModule:Toggle(enabled)
 end
 
 function NoclipModule:Init(targetTab)
-    local section = targetTab:Section({
+    local section = targetTab:Section({ 
     Title = "Noclip",
-    Icon = "brick-wall",
     TextXAlignment = "Left",
-    TextSize = 26,
+    TextSize = 17,
 })
     
     section:Toggle({
