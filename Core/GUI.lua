@@ -18,7 +18,6 @@ local Window = WindUI:CreateWindow({
     BackgroundImageTransparency = 0.42,
     HideSearchBar = true,
     ScrollBarEnabled = false,
-    ToggleKey = Enum.KeyCode.RightShift,
     User = {
         Enabled = true,
         Anonymous = false,
