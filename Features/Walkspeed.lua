@@ -1,35 +1,27 @@
 -- Features/Walkspeed.lua
 
--- Carregamos as dependências necessárias no início
 local Utils = loadstring(game:HttpGet("https://raw.githubusercontent.com/orialdev/test/refs/heads/main/Core/Utils.lua"))()
 local Config = loadstring(game:HttpGet("https://raw.githubusercontent.com/orialdev/test/refs/heads/main/Core/Config.lua"))()
 
--- O módulo em si
 local WalkspeedModule = {}
 
--- Variáveis locais ao módulo
 local originalSpeed = 16
 local connection
 
--- Função principal que será chamada pela UI
 function WalkspeedModule:Toggle(enabled)
-    Config.Movement.Enabled = enabled -- Salva no config
+    Config.Movement.Enabled = enabled
 
     if enabled then
-        -- Usando RunService para garantir que a velocidade seja mantida
-        -- Isso é mais robusto contra scripts anti-cheat do jogo
         connection = game:GetService("RunService").Heartbeat:Connect(function()
             if Utils.Humanoid and Utils.Humanoid.WalkSpeed ~= Config.Movement.Walkspeed then
                 Utils.Humanoid.WalkSpeed = Config.Movement.Walkspeed
             end
         end)
     else
-        -- Desconecta o loop para otimizar e para de alterar a velocidade
         if connection then
             connection:Disconnect()
             connection = nil
         end
-        -- Restaura a velocidade original
         if Utils.Humanoid then
             Utils.Humanoid.WalkSpeed = originalSpeed
         end
@@ -40,13 +32,12 @@ function WalkspeedModule:SetSpeed(value)
     Config.Movement.Walkspeed = value
 end
 
--- Função de inicialização: cria a UI para este módulo específico
 function WalkspeedModule:Init(Tabs)
-    Tabs:Section({ Title = "Player Safety", Icon = "user-shield" })
+    Tabs:Section({ Title = "Walkspeed", Icon = "" })
     
     Tabs:Toggle({
         Title = "Enable Walkspeed",
-        Default = Config.Movement.Enabled, -- Pega o valor do config
+        Default = Config.Movement.Enabled,
         Callback = function(value)
             WalkspeedModule:Toggle(value)
         end
@@ -57,7 +48,7 @@ function WalkspeedModule:Init(Tabs)
         Value = {
             Min = 16,
             Max = 100,
-            Default = Config.Movement.Walkspeed, -- Pega o valor do config
+            Default = Config.Movement.Walkspeed,
         },
         Callback = function(value)
             WalkspeedModule:SetSpeed(value)

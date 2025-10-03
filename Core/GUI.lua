@@ -3,10 +3,10 @@ local GUI = {}
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
 local Window = WindUI:CreateWindow({
-    Title = "My Super Hub",
-    Icon = "door-open",
-    Author = "by .ftgs and .ftgs",
-    Folder = "MySuperHub",
+    Title = "Vision Hub",
+    Icon = "rbxassetid://72201625354894",
+    Author = "orialdev",
+    Folder = "visionfolder",
     User = {
         Enabled = true,
         Anonymous = false,
