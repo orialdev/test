@@ -42,16 +42,8 @@ end
 
 -- Função de inicialização: cria a UI para este módulo específico
 function WalkspeedModule:Init(targetTab)
-    local section = targetTab:Section({ 
-    Title = "Section",
-    Box = false,
-    FontWeight = "SemiBold",
-    TextTransparency = 0.05,
-    TextXAlignment = "Left",
-    TextSize = 17, -- Default Size
-    Opened = true,
-})
-
+    local section = targetTab:Section({ Title = "Player Safety", Icon = "user-shield" })
+    
     section:Toggle({
         Title = "Enable Walkspeed",
         Default = Config.Movement.Enabled, -- Pega o valor do config
