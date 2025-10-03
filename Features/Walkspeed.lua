@@ -41,10 +41,10 @@ function WalkspeedModule:SetSpeed(value)
 end
 
 -- Função de inicialização: cria a UI para este módulo específico
-function WalkspeedModule:Init(targetTab)
-    local section = targetTab:Section({ Title = "Player Safety", Icon = "user-shield" })
+function WalkspeedModule:Init(Tabs)
+    Tabs:Section({ Title = "Player Safety", Icon = "user-shield" })
     
-    section:Toggle({
+    Tabs:Toggle({
         Title = "Enable Walkspeed",
         Default = Config.Movement.Enabled, -- Pega o valor do config
         Callback = function(value)
@@ -52,7 +52,7 @@ function WalkspeedModule:Init(targetTab)
         end
     })
 
-    section:Slider({
+    Tabs:Slider({
         Title = "Speed",
         Value = {
             Min = 16,

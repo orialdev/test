@@ -21,17 +21,17 @@ for _, featureName in ipairs(FeatureList) do
     end)
 
     if success and featureModule then
-        local targetTab
+        local Tabs = GUI.Tabs
         if featureName == "Walkspeed" or featureName == "Noclip" then
-            targetTab = GUI.Tabs.Player
+            Tabs = GUI.Tabs.Player
         elseif featureName == "Aimbot" then
-            targetTab = GUI.Tabs.Combat
+            Tabs = GUI.Tabs.Combat
         elseif featureName == "ESP" then
-            targetTab = GUI.Tabs.Visuals
+            Tabs = GUI.Tabs.Visuals
         end
         
-        if targetTab and featureModule.Init then
-            pcall(featureModule.Init, featureModule, targetTab)
+        if Tabs and featureModule.Init then
+            pcall(featureModule.Init, featureModule, Tabs)
         else
             warn("Módulo", featureName, "não possui Init ou aba de destino.")
         end
