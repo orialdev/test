@@ -13,7 +13,7 @@ local Window = WindUI:CreateWindow({
     }
 })
 
-Window:SetIconSize(26)
+Window:SetIconSize(36)
 
 GUI.Tabs = {
     Player      = Window:Tab({ Title = "Player", Icon = "user" }),
