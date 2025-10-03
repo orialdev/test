@@ -43,10 +43,8 @@ end
 -- Função de inicialização: cria a UI para este módulo específico
 function WalkspeedModule:Init(targetTab)
     local section = targetTab:Section({ 
-    Title = "Walkspeed",
-    TextXAlignment = "Left",
-    TextSize = 17,
-    })
+    Title = "Section",
+})
 
     section:Toggle({
         Title = "Enable Walkspeed",
