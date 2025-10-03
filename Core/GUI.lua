@@ -4,7 +4,7 @@ local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/rel
 
 local Window = WindUI:CreateWindow({
     Title = "Vision Hub",
-    Icon = "rbxassetid://72201625354894",
+    Icon = "rbxassetid://112974182876019",
     Author = "orialdev",
     Folder = "visionfolder",
     User = {
@@ -12,6 +12,8 @@ local Window = WindUI:CreateWindow({
         Anonymous = false,
     }
 })
+
+Window:SetIconSize(26)
 
 GUI.Tabs = {
     Player      = Window:Tab({ Title = "Player", Icon = "user" }),
